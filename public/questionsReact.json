@@ -1,0 +1,574 @@
+{
+  "questions": [
+    {
+      "question": "Qual è la principale differenza tra un componente funzionale e un componente a classe in React?",
+      "options": [
+        "I componenti funzionali possono utilizzare lo state senza librerie esterne",
+        "I componenti a classe richiedono l'uso di Hooks",
+        "I componenti a classe possono avere uno stato locale senza Hooks",
+        "I componenti funzionali non possono rendere JSX"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "components"
+    },
+    {
+      "question": "Quale tipo di componente React utilizza metodi del ciclo di vita come componentDidMount?",
+      "options": [
+        "Componente a classe",
+        "Componente funzionale",
+        "Entrambi",
+        "Nessuno dei due"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "components"
+    },
+    {
+      "question": "Quale sintassi è più moderna e leggera per scrivere componenti in React?",
+      "options": [
+        "Componenti a classe",
+        "Componenti funzionali",
+        "Entrambi sono equivalenti",
+        "Nessuna delle due"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "components"
+    },
+    {
+      "question": "Quale caratteristica è stata introdotta in React per permettere ai componenti funzionali di gestire lo stato?",
+      "options": ["Redux", "Hooks", "Context API", "Portals"],
+      "correctOption": 1,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "state"
+    },
+    {
+      "question": "Prima dell'introduzione degli Hooks, quale tipo di componente era necessario per gestire lo stato?",
+      "options": [
+        "Componenti a classe",
+        "Componenti funzionali",
+        "Entrambi",
+        "Nessuno dei due"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "hooks"
+    },
+    {
+      "question": "Quale metodo utilizzi per creare un nuovo componente React funzionale?",
+      "options": [
+        "Definendo una classe con il metodo render",
+        "Scrivendo una funzione che ritorna JSX",
+        "Utilizzando il metodo createComponent di React",
+        "Creando un oggetto con proprietà JSX"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "creazione"
+    },
+    {
+      "question": "Qual è il primo argomento richiesto per un componente React?",
+      "options": ["Props", "State", "Eventi", "Non richiede argomenti"],
+      "correctOption": 0,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "creazione"
+    },
+    {
+      "question": "Come si chiama la sintassi che consente di scrivere HTML in JavaScript in un componente React?",
+      "options": ["JSX", "TSX", "HTMLX", "SyntaxX"],
+      "correctOption": 0,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "creazione"
+    },
+    {
+      "question": "Quale tra questi nomi è valido per definire un componente React?",
+      "options": ["mycomponent", "MyComponent", "MYCOMPONENT", "componentMy"],
+      "correctOption": 1,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "creazione"
+    },
+    {
+      "question": "Come viene esportato un componente per essere utilizzato in un altro file?",
+      "options": [
+        "export { MyComponent }",
+        "export default MyComponent",
+        "export all MyComponent",
+        "import MyComponent"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "creazione"
+    },
+    {
+      "question": "Cosa rappresenta JSX in React?",
+      "options": [
+        "Un'estensione di JavaScript per scrivere componenti HTML-like",
+        "Un linguaggio di markup separato da JavaScript",
+        "Un framework per scrivere codice React",
+        "Un gestore di eventi React"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "jsx"
+    },
+    {
+      "question": "Quale caratteristica è obbligatoria per restituire più elementi in JSX?",
+      "options": [
+        "Devono essere racchiusi in un elemento genitore",
+        "Devono essere convertiti in stringa",
+        "Non è possibile restituire più elementi",
+        "Devono avere una chiave unica"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "jsx"
+    },
+    {
+      "question": "Qual è la convenzione per aggiungere classi CSS in JSX?",
+      "options": ["class", "classname", "css", "styles"],
+      "correctOption": 1,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "jsx"
+    },
+    {
+      "question": "Come si passa un'espressione JavaScript in JSX?",
+      "options": [
+        "Utilizzando parentesi graffe {}",
+        "Utilizzando doppi apici \"\"",
+        "Utilizzando parentesi quadre []",
+        "Utilizzando backticks ``"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "jsx"
+    },
+    {
+      "question": "Quale di questi è un JSX valido?",
+      "options": [
+        "<div>Test</div>",
+        "<div><p></div>",
+        "<div />",
+        "Entrambi 1 e 3"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "jsx"
+    },
+    {
+      "question": "Cosa rappresentano le props in un componente React?",
+      "options": [
+        "Il metodo per modificare lo stato di un componente",
+        "Un meccanismo per passare dati tra componenti",
+        "Un tipo di evento React",
+        "Un framework esterno per la gestione di stati"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "props"
+    },
+    {
+      "question": "Come si accede a una prop chiamata 'name' in un componente funzionale?",
+      "options": [
+        "this.props.name",
+        "props.name",
+        "state.name",
+        "this.state.name"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "props"
+    },
+    {
+      "question": "Qual è la regola principale delle props in React?",
+      "options": [
+        "Possono essere modificate solo dai componenti figli",
+        "Possono essere modificate solo con Redux",
+        "Sono immutabili e possono essere solo lette",
+        "Sono mutabili tramite metodi speciali"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "props"
+    },
+    {
+      "question": "Quale metodo React permette di definire valori predefiniti per le props?",
+      "options": ["defaultProps", "setProps", "initProps", "ReactProps"],
+      "correctOption": 0,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "props"
+    },
+    {
+      "question": "Come si passano più props a un componente React?",
+      "options": [
+        "Separandole con virgole",
+        "Utilizzando un oggetto con tutte le props",
+        "Passandole come attributi HTML-like",
+        "Non è possibile passare più props"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "props"
+    },
+    {
+      "question": "Cosa rappresenta lo state in un componente React?",
+      "options": [
+        "Un set di metodi per gestire eventi",
+        "Una struttura per gestire dati locali e dinamici di un componente",
+        "Una configurazione globale dell'applicazione",
+        "Un tipo di dato speciale in React"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "state"
+    },
+    {
+      "question": "Come si definisce lo state in un componente funzionale?",
+      "options": [
+        "Utilizzando il costruttore",
+        "Con l'hook useState",
+        "Con l'hook useEffect",
+        "Con il metodo initState"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "state"
+    },
+    {
+      "question": "Quale sintassi è corretta per aggiornare lo stato chiamato 'counter'?",
+      "options": [
+        "setCounter(counter + 1)",
+        "counter.setState(counter + 1)",
+        "state.counter = counter + 1",
+        "updateCounter(counter + 1)"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "state"
+    },
+    {
+      "question": "Quale valore iniziale assegna React allo state di default?",
+      "options": [
+        "null",
+        "undefined",
+        "Un valore passato come parametro a useState",
+        "Un oggetto vuoto"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "state"
+    },
+    {
+      "question": "Cosa accade quando si modifica lo state in React?",
+      "options": [
+        "Il componente si aggiorna automaticamente",
+        "Il componente rimane invariato",
+        "Si genera un errore",
+        "React aggiorna lo state globale"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "state"
+    },
+    {
+      "question": "Come si associa un gestore di eventi a un elemento in React?",
+      "options": [
+        "Utilizzando l'attributo onEvent",
+        "Usando un attributo on[NomeEvento] con camelCase",
+        "Scrivendo una funzione anonima nel metodo render",
+        "React non supporta eventi"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "eventi"
+    },
+    {
+      "question": "Quale tra questi eventi React corrisponde a un click su un pulsante?",
+      "options": ["onPress", "onTouch", "onClick", "onSelect"],
+      "correctOption": 2,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "eventi"
+    },
+    {
+      "question": "Come si passa un parametro a un gestore di eventi in React?",
+      "options": [
+        "Usando una funzione anonima che chiama la funzione con il parametro",
+        "Assegnando il parametro direttamente a onEvent",
+        "Utilizzando il metodo addParameter",
+        "Non è possibile passare parametri"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "eventi"
+    },
+    {
+      "question": "Come si impedisce il comportamento predefinito di un evento in React?",
+      "options": [
+        "Chiamando preventDefault() sull'evento",
+        "Restituendo false dal gestore dell'evento",
+        "Assegnando l'evento a null",
+        "React non permette di modificare il comportamento degli eventi"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "eventi"
+    },
+    {
+      "question": "In React, quale sintassi utilizzi per accedere all'evento in un gestore?",
+      "options": [
+        "(event) => {}",
+        "(e) => {}",
+        "Entrambe le opzioni sono corrette",
+        "Nessuna delle due"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "eventi"
+    },
+    {
+      "question": "Qual è il metodo React per eseguire rendering condizionale?",
+      "options": [
+        "Utilizzare un if/else all'interno di render",
+        "Usare un'espressione ternaria all'interno del JSX",
+        "Entrambe le opzioni sono corrette",
+        "React non supporta il rendering condizionale"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "rendering"
+    },
+    {
+      "question": "Come si rende una lista dinamica di elementi in React?",
+      "options": [
+        "Utilizzando il metodo map per iterare su un array",
+        "Creando una funzione che ritorna elementi HTML",
+        "Generando manualmente ogni elemento della lista",
+        "React non supporta liste dinamiche"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "rendering"
+    },
+    {
+      "question": "Quale attributo è necessario per ogni elemento in una lista renderizzata dinamicamente?",
+      "options": ["className", "id", "key", "name"],
+      "correctOption": 2,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "rendering"
+    },
+    {
+      "question": "Cosa accade se si omette l'attributo key in una lista dinamica?",
+      "options": [
+        "React mostra un errore",
+        "React emette un warning e potrebbe causare comportamenti inattesi",
+        "Non accade nulla, la lista funziona correttamente",
+        "Gli elementi della lista non vengono renderizzati"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "rendering"
+    },
+    {
+      "question": "Come si gestisce il rendering dinamico di componenti in React?",
+      "options": [
+        "Assegnando componenti diversi a una variabile e restituendoli in base alla logica",
+        "Utilizzando un ciclo for direttamente nel metodo render",
+        "React non permette il rendering dinamico di componenti",
+        "Passando le props come funzione"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "rendering"
+    },
+    {
+      "question": "Cosa significa 'lifting state up' in React?",
+      "options": [
+        "Spostare lo stato locale in un componente superiore per condividerlo tra componenti",
+        "Utilizzare uno stato globale per tutti i componenti",
+        "Trasferire lo stato locale in un hook esterno",
+        "Spostare lo stato su un server remoto"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "lifting"
+    },
+    {
+      "question": "Qual è uno scenario comune per applicare il lifting state up?",
+      "options": [
+        "Quando due componenti figli devono condividere lo stesso stato",
+        "Quando un componente deve gestire eventi globali",
+        "Quando lo stato deve essere sincronizzato con un'API",
+        "Quando lo stato è inutilizzato"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "lifting"
+    },
+    {
+      "question": "Come si passa lo stato al componente figlio dopo aver eseguito il lifting state up?",
+      "options": [
+        "Utilizzando le props",
+        "Con l'hook useState",
+        "Con il metodo bind",
+        "Attraverso il contesto globale"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "lifting"
+    },
+    {
+      "question": "Qual è un potenziale svantaggio del lifting state up?",
+      "options": [
+        "Aumenta la complessità e può causare rendering inutili",
+        "Non consente la gestione di eventi",
+        "Rende impossibile utilizzare i componenti funzionali",
+        "Richiede un'inizializzazione di defaultProps"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "lifting"
+    },
+    {
+      "question": "Quale struttura dati è tipicamente utilizzata per gestire lo stato sollevato?",
+      "options": ["Un array", "Un oggetto", "Una funzione", "Una stringa"],
+      "correctOption": 1,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "lifting"
+    },
+    {
+      "question": "Qual è il principale scopo degli Hooks in React?",
+      "options": [
+        "Permettere di usare lo state e altre funzionalità senza dover scrivere classi",
+        "Semplificare la scrittura di componenti a classe",
+        "Aggiungere nuovi eventi DOM",
+        "Gestire solo lo stile dinamico"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "hooks"
+    },
+    {
+      "question": "Qual è il primo hook introdotto per gestire lo state nei componenti funzionali?",
+      "options": ["useEffect", "useState", "useReducer", "useMemo"],
+      "correctOption": 1,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "hooks"
+    },
+    {
+      "question": "Quale hook React utilizzi per eseguire effetti collaterali come chiamate API?",
+      "options": ["useState", "useEffect", "useContext", "useCallback"],
+      "correctOption": 1,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "hooks"
+    },
+    {
+      "question": "Qual è la regola principale per l'utilizzo degli Hooks?",
+      "options": [
+        "Devono essere chiamati all'inizio del componente o della funzione",
+        "Devono essere chiamati solo nei componenti a classe",
+        "Possono essere utilizzati solo con Redux",
+        "Non possono essere combinati tra loro"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "hooks"
+    },
+    {
+      "question": "Quale hook utilizzi per condividere lo stato tra componenti senza passare props manualmente?",
+      "options": ["useState", "useReducer", "useContext", "useEffect"],
+      "correctOption": 2,
+      "points": 10,
+      "difficulty": "beginner",
+      "language": "react",
+      "topic": "hooks"
+    }
+  ]
+}

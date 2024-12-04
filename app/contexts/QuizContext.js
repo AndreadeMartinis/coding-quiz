@@ -5,7 +5,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import { shuffle } from "../lib/utilities";
+import { shuffle } from "../lib/utils";
 
 const QuizContext = createContext();
 

@@ -1,5 +1,5 @@
 import { useQuiz } from "../contexts/QuizContext";
-import { stringUppercase } from "../lib/utilities";
+import { stringUppercase } from "../lib/utils";
 
 function StartScreen() {
   const {

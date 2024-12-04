@@ -28,7 +28,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="it">
       <link rel="icon" href="/logoviola.png" sizes="any" />
       <body
         className={`${geistSans.variable} ${geistMono.variable}  ${codystar.variable} antialiased`}

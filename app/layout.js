@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import { Codystar } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 import "./globals.css";
 
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable}  ${codystar.variable} antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );

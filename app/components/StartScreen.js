@@ -1,4 +1,5 @@
 import { useQuiz } from "../contexts/QuizContext";
+import { stringUppercase } from "../lib/utilities";
 
 function StartScreen() {
   const {
@@ -7,10 +8,6 @@ function StartScreen() {
     questions,
     settings: { language, topic, difficulty, numQuestionsSel },
   } = useQuiz();
-
-  function stringUppercase(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
 
   const handleLanguageChange = (e) => {
     dispatch({
@@ -127,3 +124,9 @@ function StartScreen() {
 }
 
 export default StartScreen;
+
+/* 
+
+- Aggiunta salvataggio record nei cookie 
+
+*/

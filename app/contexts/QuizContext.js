@@ -1,6 +1,5 @@
-"use client";
-
 import { createContext, useContext, useReducer, useEffect } from "react";
+import { shuffle } from "../lib/utilities"; // Se non hai una funzione di shuffle, crea una
 
 const QuizContext = createContext();
 
@@ -77,6 +76,7 @@ function reducer(state, action) {
       return {
         ...initialState,
         allQuestions: state.allQuestions,
+        questions: state.allQuestions,
         highscore: state.highscore,
         status: "dataLoaded",
       };
@@ -130,7 +130,22 @@ function QuizProvider({ children }) {
       filteredQuestions = filteredQuestions.slice(0, Number(numQuestionsSel));
     }
 
-    return filteredQuestions;
+    return shuffle(filteredQuestions);
+  }
+
+  function randomizeAnswers(questions) {
+    return questions.map((question) => {
+      const shuffledOptions = shuffle([...question.options]);
+      const correctOption = shuffledOptions.indexOf(
+        question.options[question.correctOption]
+      );
+
+      return {
+        ...question,
+        options: shuffledOptions,
+        correctOption,
+      };
+    });
   }
 
   useEffect(() => {
@@ -145,7 +160,9 @@ function QuizProvider({ children }) {
     fetch(fileToFetch)
       .then((res) => res.json())
       .then((data) => {
-        dispatch({ type: "dataReceived", payload: data.questions });
+        // Applica la randomizzazione delle risposte
+        const randomizedQuestions = randomizeAnswers(data.questions);
+        dispatch({ type: "dataReceived", payload: randomizedQuestions });
       })
       .catch(() => dispatch({ type: "dataFailed" }));
   }, [language]);

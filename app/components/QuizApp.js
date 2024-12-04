@@ -10,6 +10,7 @@ import FinishScreen from "./FinishScreen";
 import Footer from "./Footer";
 import Timer from "./Timer";
 import { useQuiz } from "../contexts/QuizContext";
+import Signature from "./Signature";
 
 export default function App() {
   const { status } = useQuiz();
@@ -34,6 +35,7 @@ export default function App() {
         )}
         {status === "finished" && <FinishScreen />}
       </Main>
+      <Signature />
     </div>
   );
 }

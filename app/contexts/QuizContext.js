@@ -1,10 +1,16 @@
-import { createContext, useContext, useReducer, useEffect } from "react";
+import {
+  createContext,
+  useContext,
+  useReducer,
+  useEffect,
+  useState,
+} from "react";
 import { shuffle } from "../lib/utilities";
 
 const QuizContext = createContext();
 
+// Impostazioni di default
 const SECS_PER_QUESTION = 10;
-
 const initialState = {
   allQuestions: [],
   questions: [],
@@ -12,9 +18,7 @@ const initialState = {
   index: 0,
   answer: null,
   points: 0,
-  highscore: localStorage.getItem("react-highscore")
-    ? parseInt(localStorage.getItem("react-highscore"))
-    : 0, // Recupera il highscore per la categoria React
+  highscore: 0, // Impostato a 0 inizialmente
   secondsRemaining: null,
   settings: {
     language: "react",
@@ -119,6 +123,23 @@ function QuizProvider({ children }) {
     dispatch,
   ] = useReducer(reducer, initialState);
 
+  const [isClient, setIsClient] = useState(false); // Stato per determinare se siamo nel browser
+
+  // Impostare highscore iniziale solo nel client
+  useEffect(() => {
+    setIsClient(true); // Quando il componente è montato, aggiorniamo lo stato
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return; // Non eseguire l'effetto finché non siamo nel client
+
+    const savedHighscore = localStorage.getItem(`${language}-highscore`);
+    dispatch({
+      type: "setHighscore",
+      payload: savedHighscore ? parseInt(savedHighscore) : 0,
+    });
+  }, [isClient, language]);
+
   const numQuestions = questions.length;
   const maxPossiblePoints = questions.reduce(
     (prev, cur) => prev + cur.points,
@@ -168,13 +189,6 @@ function QuizProvider({ children }) {
     };
 
     const fileToFetch = fileMap[language];
-
-    // Recupera il highscore per la nuova categoria
-    const savedHighscore = localStorage.getItem(`${language}-highscore`);
-    dispatch({
-      type: "setHighscore",
-      payload: savedHighscore ? parseInt(savedHighscore) : 0,
-    });
 
     fetch(fileToFetch)
       .then((res) => res.json())

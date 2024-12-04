@@ -163,13 +163,24 @@ progress {
   border-radius: 100px;
 }
 
-/* .boxButtons {
-  width: 100%;
-  padding-block: 2rem;
+.finishScreen {
+  min-height: 70vh;
   display: flex;
-  justify-content: space-around;
-  gap: 1rem;
-} */
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.finishScreen span {
+  color: var(--color-theme);
+  font-weight: 600;
+}
+
+.finishScreen button {
+  width: fit-content;
+  float: none;
+  margin: auto;
+}
 
 .best-h2 {
   font-size: 3rem;

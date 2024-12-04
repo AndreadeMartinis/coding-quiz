@@ -1,6 +1,13 @@
 import { useQuiz } from "../contexts/QuizContext";
+import { stringUppercase } from "../lib/utilities";
 function FinishScreen() {
-  const { points, maxPossiblePoints, highscore, dispatch } = useQuiz();
+  const {
+    points,
+    maxPossiblePoints,
+    highscore,
+    settings: { language },
+    dispatch,
+  } = useQuiz();
 
   const percentage = (points / maxPossiblePoints) * 100;
 
@@ -12,19 +19,21 @@ function FinishScreen() {
   if (percentage === 0) emoji = "🤦‍♂️";
 
   return (
-    <>
+    <div className="finishScreen">
       <p className="result">
         <span>{emoji}</span> You scored <strong>{points}</strong> out of{" "}
         {maxPossiblePoints} ({Math.ceil(percentage)}%)
       </p>
-      <p className="highscore">(Highscore: {highscore} points)</p>
+      <p className="highscore">
+        <span>{stringUppercase(language)}</span> highscore: {highscore} points
+      </p>
       <button
         className="btn btn-ui"
         onClick={() => dispatch({ type: "restart" })}
       >
         Restart quiz
       </button>
-    </>
+    </div>
   );
 }
 

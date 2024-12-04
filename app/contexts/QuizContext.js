@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer, useEffect } from "react";
-import { shuffle } from "../lib/utilities"; // Se non hai una funzione di shuffle, crea una
+import { shuffle } from "../lib/utilities";
 
 const QuizContext = createContext();
 
@@ -12,7 +12,9 @@ const initialState = {
   index: 0,
   answer: null,
   points: 0,
-  highscore: 0,
+  highscore: localStorage.getItem("react-highscore")
+    ? parseInt(localStorage.getItem("react-highscore"))
+    : 0, // Recupera il highscore per la categoria React
   secondsRemaining: null,
   settings: {
     language: "react",
@@ -66,11 +68,16 @@ function reducer(state, action) {
     case "nextQuestion":
       return { ...state, index: state.index + 1, answer: null };
     case "finish":
+      const newHighscore =
+        state.points > state.highscore ? state.points : state.highscore;
+      localStorage.setItem(
+        `${state.settings.language}-highscore`,
+        newHighscore
+      ); // Salva il highscore per la categoria
       return {
         ...state,
         status: "finished",
-        highscore:
-          state.points > state.highscore ? state.points : state.highscore,
+        highscore: newHighscore,
       };
     case "restart":
       return {
@@ -85,6 +92,11 @@ function reducer(state, action) {
         ...state,
         secondsRemaining: state.secondsRemaining - 1,
         status: state.secondsRemaining === 0 ? "finished" : state.status,
+      };
+    case "setHighscore":
+      return {
+        ...state,
+        highscore: action.payload,
       };
     default:
       throw new Error("Action unknown");
@@ -157,10 +169,16 @@ function QuizProvider({ children }) {
 
     const fileToFetch = fileMap[language];
 
+    // Recupera il highscore per la nuova categoria
+    const savedHighscore = localStorage.getItem(`${language}-highscore`);
+    dispatch({
+      type: "setHighscore",
+      payload: savedHighscore ? parseInt(savedHighscore) : 0,
+    });
+
     fetch(fileToFetch)
       .then((res) => res.json())
       .then((data) => {
-        // Applica la randomizzazione delle risposte
         const randomizedQuestions = randomizeAnswers(data.questions);
         dispatch({ type: "dataReceived", payload: randomizedQuestions });
       })

@@ -169,6 +169,7 @@ progress {
   flex-direction: column;
   justify-content: center;
   gap: 3rem;
+  padding-top: 5rem;
 }
 
 .finishScreen span {

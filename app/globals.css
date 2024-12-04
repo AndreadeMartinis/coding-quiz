@@ -37,9 +37,6 @@ body {
   color: var(--color-light);
   background-color: var(--color-darkest);
   padding: 3.2rem;
-}
-
-.app {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -151,7 +148,7 @@ progress {
 }
 
 .progress strong {
-  color: #1098ad;
+  color: var(--color-theme);
 }
 
 ::-webkit-progress-bar {
@@ -375,9 +372,13 @@ progress {
 
 .signature {
   font-size: 1.5rem;
-  color: #1098ad;
+  color: var(--color-theme);
   font-weight: 600;
   padding-top: 2rem;
+  transition: all ease-in-out 0.3s;
+}
+.signature:hover {
+  color: var(--color-accent);
 }
 
 .signature span {

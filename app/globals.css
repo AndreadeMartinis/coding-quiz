@@ -386,6 +386,9 @@ progress {
 }
 
 @media (max-width: 500px) {
+  body {
+    padding: 1.5rem 1.5rem;
+  }
   .main {
     width: 100%;
   }
@@ -422,6 +425,7 @@ progress {
 
   h1 {
     font-size: 2.5rem;
+    margin-left: 1rem;
   }
   h2 {
     font-size: 2.2rem;

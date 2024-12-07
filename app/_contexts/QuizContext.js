@@ -123,22 +123,13 @@ function QuizProvider({ children }) {
     dispatch,
   ] = useReducer(reducer, initialState);
 
-  const [isClient, setIsClient] = useState(false); // Stato per determinare se siamo nel browser
-
-  // Impostare highscore iniziale solo nel client
   useEffect(() => {
-    setIsClient(true); // Quando il componente è montato, aggiorniamo lo stato
-  }, []);
-
-  useEffect(() => {
-    if (!isClient) return; // Non eseguire l'effetto finché non siamo nel client
-
     const savedHighscore = localStorage.getItem(`${language}-highscore`);
     dispatch({
       type: "setHighscore",
       payload: savedHighscore ? parseInt(savedHighscore) : 0,
     });
-  }, [isClient, language]);
+  }, [language]);
 
   const numQuestions = questions.length;
   const maxPossiblePoints = questions.reduce(

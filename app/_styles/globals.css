@@ -418,6 +418,7 @@ progress {
 @media (max-width: 500px) {
   body {
     padding: 1.5rem 1.5rem;
+    align-items: start;
   }
   .main {
     width: 100%;

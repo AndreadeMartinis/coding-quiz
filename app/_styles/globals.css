@@ -474,6 +474,8 @@ progress {
   }
   .bestTitle h2 {
     font-size: 2rem;
+    margin-bottom: 0;
+    margin-top: 2rem;
   }
 
   .btn {
@@ -499,7 +501,6 @@ progress {
   .container-box-dropdown {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 1rem;
   }
 
   .box-dropdown {

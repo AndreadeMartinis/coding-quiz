@@ -1,5 +1,5 @@
-import { useQuiz } from "../contexts/QuizContext";
-import { stringUppercase } from "../lib/utils";
+import { useQuiz } from "../_contexts/QuizContext";
+import { stringUppercase } from "../_lib/utils";
 function FinishScreen() {
   const {
     points,

@@ -1,4 +1,4 @@
-import { useQuiz } from "../contexts/QuizContext";
+import { useQuiz } from "../_contexts/QuizContext";
 
 function Options({ question }) {
   const { dispatch, answer } = useQuiz();

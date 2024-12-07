@@ -2,7 +2,9 @@ import localFont from "next/font/local";
 import { Codystar } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
-import "./globals.css";
+import "./_styles/globals.css";
+
+import Signature from "./_components/Signature";
 
 const codystar = Codystar({
   subsets: ["latin"], // Specifica il sottinsieme (es. 'latin', 'cyrillic', ecc.)
@@ -22,7 +24,10 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Coding Quiz",
+  title: {
+    template: "%s's Coding Quiz",
+    default: "Coding Quiz",
+  },
   description:
     "Metti alla prova le tue conoscenze in ambito web con questo quiz su React, Nextjs e Javascript. Un ottimo strumento per il ripasso per ogni sviluppatore" /* FIXME: */,
 };
@@ -35,6 +40,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable}  ${codystar.variable} antialiased`}
       >
         {children}
+        <Signature />
         <Analytics />
       </body>
     </html>

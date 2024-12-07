@@ -110,6 +110,13 @@ h5 {
 
 h2 span {
   color: var(--color-theme-light);
+  font-weight: 600;
+}
+.best-h2 span.javascript {
+  color: #efdb4e;
+}
+.best-h2 span.nextjs {
+  color: #0a0a0a;
 }
 
 h3 span {
@@ -441,6 +448,7 @@ progress {
   .best-h2 {
     font-size: 2rem;
   }
+
   .btn {
     font-size: 1.4rem;
     padding: 1rem 2rem;

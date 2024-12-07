@@ -1,16 +1,14 @@
 "use client";
-import { QuizProvider } from "./contexts/QuizContext";
+import { QuizProvider } from "./_contexts/QuizContext";
 
-import QuizApp from "./components/QuizApp";
-import Header from "./components/Header";
-import Signature from "./components/Signature";
+import QuizApp from "./_components/QuizApp";
+import Header from "./_components/Header";
 
 export default function Home() {
   return (
     <QuizProvider>
       <Header />
       <QuizApp />
-      <Signature />
     </QuizProvider>
   );
 }

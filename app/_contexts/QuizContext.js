@@ -5,7 +5,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import { shuffle } from "../lib/utils";
+import { randomizeAnswers, shuffle } from "../_lib/utils";
 
 const QuizContext = createContext();
 
@@ -149,14 +149,14 @@ function QuizProvider({ children }) {
   function filterQuestions(allQuestions, topic, difficulty, numQuestionsSel) {
     let filteredQuestions = [...allQuestions];
 
-    if (topic !== "all") {
-      filteredQuestions = filteredQuestions.filter((q) => q.topic === topic);
-    }
-
     if (difficulty !== "all") {
       filteredQuestions = filteredQuestions.filter(
         (q) => q.difficulty === difficulty
       );
+    }
+
+    if (topic !== "all") {
+      filteredQuestions = filteredQuestions.filter((q) => q.topic === topic);
     }
 
     if (numQuestionsSel !== "all") {
@@ -166,26 +166,11 @@ function QuizProvider({ children }) {
     return shuffle(filteredQuestions);
   }
 
-  function randomizeAnswers(questions) {
-    return questions.map((question) => {
-      const shuffledOptions = shuffle([...question.options]);
-      const correctOption = shuffledOptions.indexOf(
-        question.options[question.correctOption]
-      );
-
-      return {
-        ...question,
-        options: shuffledOptions,
-        correctOption,
-      };
-    });
-  }
-
   useEffect(() => {
     const fileMap = {
-      javascript: "/questionsJavascript.json",
-      nextjs: "/questionsNextjs.json",
-      react: "/questionsReact.json",
+      javascript: "/javascriptQuestions.json",
+      nextjs: "/nextjsQuestions.json",
+      react: "/reactQuestions.json",
     };
 
     const fileToFetch = fileMap[language];

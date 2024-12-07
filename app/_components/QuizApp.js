@@ -8,7 +8,7 @@ import Progress from "./Progress";
 import FinishScreen from "./FinishScreen";
 import Footer from "./Footer";
 import Timer from "./Timer";
-import { useQuiz } from "../contexts/QuizContext";
+import { useQuiz } from "../_contexts/QuizContext";
 
 export default function App() {
   const { status } = useQuiz();

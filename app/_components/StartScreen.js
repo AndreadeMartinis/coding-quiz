@@ -1,7 +1,11 @@
-import { useQuiz } from "../contexts/QuizContext";
-import { stringUppercase } from "../lib/utils";
+"use client";
+
+import { useRouter } from "next/navigation";
+import { useQuiz } from "../_contexts/QuizContext";
+import { stringUppercase } from "../_lib/utils";
 
 function StartScreen() {
+  const router = useRouter();
   const {
     dispatch,
     allQuestions,
@@ -9,10 +13,17 @@ function StartScreen() {
     settings: { language, topic, difficulty, numQuestionsSel },
   } = useQuiz();
 
+  // Funzione per aggiornare la route e fetchare nuove domande
   const handleLanguageChange = (e) => {
+    const newLanguage = e.target.value;
+
+    /* // Aggiorna la route
+    router.push(`/${newLanguage}`); */
+
+    // Aggiorna il contesto con il nuovo linguaggio
     dispatch({
       type: "settingsUpdate",
-      payload: { language: e.target.value, topic, difficulty, numQuestionsSel },
+      payload: { language: newLanguage, topic, difficulty, numQuestionsSel },
     });
   };
 
@@ -48,7 +59,9 @@ function StartScreen() {
   return (
     <div className="start">
       <h2 className="best-h2">
-        Il miglior <span>{stringUppercase(language)} Quiz</span> del mondo!
+        Il miglior{" "}
+        <span className={language}>{stringUppercase(language)} Quiz</span> del
+        mondo!
       </h2>
 
       <div className="box-dropdown">
@@ -61,6 +74,19 @@ function StartScreen() {
           <option value="react">React</option>
           <option value="javascript">JavaScript</option>
           <option value="nextjs">Next.js</option>
+        </select>
+      </div>
+
+      <div className="box-dropdown">
+        <h5>Livello</h5>
+        <select
+          className="dropdown"
+          value={difficulty}
+          onChange={handleDifficultyChange}
+        >
+          <option value="beginner">Base</option>
+          <option value="competent">Intermedio</option>
+          <option value="expert">Esperto</option>
         </select>
       </div>
 
@@ -78,22 +104,6 @@ function StartScreen() {
                 </option>
               )
             )}
-        </select>
-      </div>
-
-      <div className="box-dropdown">
-        <h5>
-          Difficoltà <span>(opzionale)</span>
-        </h5>
-        <select
-          className="dropdown"
-          value={difficulty}
-          onChange={handleDifficultyChange}
-        >
-          <option value="all">Mix</option>
-          <option value="beginner">Beginner</option>
-          <option value="competent">Competent</option>
-          <option value="expert">Expert</option>
         </select>
       </div>
 
@@ -124,9 +134,3 @@ function StartScreen() {
 }
 
 export default StartScreen;
-
-/* 
-
-- Aggiunta salvataggio record nei cookie 
-
-*/

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { useQuiz } from "../contexts/QuizContext";
+import { useQuiz } from "../_contexts/QuizContext";
 
 function Timer() {
   const { dispatch, secondsRemaining } = useQuiz();

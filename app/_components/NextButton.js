@@ -1,4 +1,4 @@
-import { useQuiz } from "../contexts/QuizContext";
+import { useQuiz } from "../_contexts/QuizContext";
 function NextButton() {
   const { dispatch, answer, index, numQuestions } = useQuiz();
 

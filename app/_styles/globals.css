@@ -499,7 +499,7 @@ progress {
   .container-box-dropdown {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   .box-dropdown {
@@ -509,7 +509,6 @@ progress {
     align-items: center;
     gap: 2rem;
     width: 50%;
-    margin-block: 1rem;
     padding-top: 1rem;
   }
 

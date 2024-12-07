@@ -160,6 +160,8 @@ h5 span {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
 }
 
 .progress {

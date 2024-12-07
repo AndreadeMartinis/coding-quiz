@@ -108,15 +108,34 @@ h5 {
   position: relative;
 }
 
-h2 span {
+.bestTitle {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.bestTitle h2 {
+  font-size: 3rem;
+  width: 43%;
+  text-align: center;
+}
+
+.bestTitle h2:first-child {
+  width: 25%;
+}
+.bestTitle h2:last-child {
+  width: 31%;
+}
+.bestTitle span {
   color: var(--color-theme-light);
   font-weight: 600;
 }
-.best-h2 span.javascript {
+.bestTitle span.javascript {
   color: #efdb4e;
 }
-.best-h2 span.nextjs {
-  color: #0a0a0a;
+.bestTitle span.nextjs {
+  color: rgb(0, 0, 0);
+  text-shadow: 0 1 1 rgb(23, 24, 30);
 }
 
 h3 span {
@@ -135,6 +154,12 @@ h5 span {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.container-box-dropdown {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .progress {
@@ -187,15 +212,11 @@ progress {
   margin: auto;
 }
 
-.best-h2 {
-  font-size: 3rem;
-}
-
 .box-dropdown {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
-  width: 100%;
+  width: 85%;
   margin-block: 1rem;
 }
 
@@ -445,7 +466,10 @@ progress {
     font-weight: 600;
     margin-bottom: 2.4rem;
   }
-  .best-h2 {
+  h5 {
+    font-size: 1.8rem;
+  }
+  .bestTitle h2 {
     font-size: 2rem;
   }
 
@@ -469,27 +493,43 @@ progress {
     font-size: 1.6rem;
   }
 
+  .container-box-dropdown {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
   .box-dropdown {
     text-align: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    width: 100%;
+    width: 50%;
     margin-block: 1rem;
+    padding-top: 1rem;
   }
 
   .box-dropdown select {
     color: black;
     width: 12rem;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     border-radius: 1.5rem;
     padding: 0.5rem;
+    text-align: center;
   }
 
   .box-dropdown + h3 {
     margin-top: 3rem;
   }
+
+  h5 span {
+    position: static;
+    display: block;
+    font-size: 1.1rem;
+    color: var(--color-theme-light);
+  }
+
   footer a {
     font-size: 1.2rem;
     left: 25%;

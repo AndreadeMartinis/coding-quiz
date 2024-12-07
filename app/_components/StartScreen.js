@@ -58,69 +58,77 @@ function StartScreen() {
 
   return (
     <div className="start">
-      <h2 className="best-h2">
-        Il miglior{" "}
-        <span className={language}>{stringUppercase(language)} Quiz</span> del
-        mondo!
-      </h2>
-
-      <div className="box-dropdown">
-        <h5>Linguaggio</h5>
-        <select
-          className="dropdown"
-          value={language}
-          onChange={handleLanguageChange}
-        >
-          <option value="react">React</option>
-          <option value="javascript">JavaScript</option>
-          <option value="nextjs">Next.js</option>
-        </select>
+      <div className="bestTitle">
+        <h2>Il miglior</h2>
+        <h2>
+          <span className={language}>{stringUppercase(language)} Quiz</span>
+        </h2>
+        <h2>del mondo!</h2>
       </div>
 
-      <div className="box-dropdown">
-        <h5>Livello</h5>
-        <select
-          className="dropdown"
-          value={difficulty}
-          onChange={handleDifficultyChange}
-        >
-          <option value="beginner">Base</option>
-          <option value="competent">Intermedio</option>
-          <option value="expert">Esperto</option>
-        </select>
-      </div>
+      <div className="container-box-dropdown">
+        <div className="box-dropdown">
+          <h5>Linguaggio</h5>
+          <select
+            className="dropdown"
+            value={language}
+            onChange={handleLanguageChange}
+          >
+            <option value="react">React</option>
+            <option value="javascript">JavaScript</option>
+            <option value="nextjs">Next.js</option>
+          </select>
+        </div>
 
-      <div className="box-dropdown">
-        <h5>
-          Topic <span>(opzionale)</span>
-        </h5>
-        <select className="dropdown" value={topic} onChange={handleTopicChange}>
-          <option value="all">Mix</option>
-          {allQuestions &&
-            [...new Set(allQuestions.map((question) => question.topic))].map(
-              (uniqueTopic) => (
-                <option key={uniqueTopic} value={uniqueTopic}>
-                  {stringUppercase(uniqueTopic)}
-                </option>
-              )
-            )}
-        </select>
-      </div>
+        <div className="box-dropdown">
+          <h5>Livello</h5>
+          <select
+            className="dropdown"
+            value={difficulty}
+            onChange={handleDifficultyChange}
+          >
+            <option value="beginner">Base</option>
+            <option value="competent">Intermedio</option>
+            <option value="expert">Esperto</option>
+          </select>
+        </div>
 
-      <div className="box-dropdown">
-        <h5>
-          Domande massime <span>(opzionale)</span>
-        </h5>
-        <select
-          className="dropdown"
-          value={numQuestionsSel}
-          onChange={handleNumQuestionsSelChange}
-        >
-          <option value="all">Tutte</option>
-          <option value="10">10</option>
-          <option value="20">20</option>
-          <option value="30">30</option>
-        </select>
+        <div className="box-dropdown">
+          <h5>
+            Topic <span>(opzionale)</span>
+          </h5>
+          <select
+            className="dropdown"
+            value={topic}
+            onChange={handleTopicChange}
+          >
+            <option value="all">Mix</option>
+            {allQuestions &&
+              [...new Set(allQuestions.map((question) => question.topic))].map(
+                (uniqueTopic) => (
+                  <option key={uniqueTopic} value={uniqueTopic}>
+                    {stringUppercase(uniqueTopic)}
+                  </option>
+                )
+              )}
+          </select>
+        </div>
+
+        <div className="box-dropdown">
+          <h5>
+            Domande massime <span>(opzionale)</span>
+          </h5>
+          <select
+            className="dropdown"
+            value={numQuestionsSel}
+            onChange={handleNumQuestionsSelChange}
+          >
+            <option value="all">Tutte</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+          </select>
+        </div>
       </div>
       <h3>
         <span>{questions.length}</span> domande disponibili
